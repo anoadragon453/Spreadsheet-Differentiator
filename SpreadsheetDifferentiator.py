@@ -10,7 +10,7 @@ from openpyxl import load_workbook
 from openpyxl.styles import PatternFill, Border, Side, Alignment, Protection, Font
 
 # Font to change cells to
-newFont = Font(name='Calibri', size=11, bold=False, italic=False, vertAlign=None, underline='none', strike=False, color='7F7FFF')
+newFont = Font(name='Calibri', size=11, bold=False, italic=False, vertAlign=None, underline='none', strike=False, color='FF0000')
 
 #load workbook
 wb = load_workbook('ss.xlsm')
@@ -39,6 +39,9 @@ for indexChangedX in letterRange:
 
 				if changedContentToCheck == originalContentToCheck:
 					match = True
+					break;
+			if match == True:
+				break;
 
 		# If there's no match, then stylize the cell
 		if not match:
